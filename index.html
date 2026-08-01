@@ -17,22 +17,28 @@
     />
     <style>
       :root {
-        --paper: #fcf8f3;
-        --paper-deep: #f3e5dc;
-        --paper-pink: #f8eeea;
-        --terracotta: #c66f65;
-        --terracotta-dark: #a9544d;
-        --rose: #d99b91;
-        --ink: #2b2422;
-        --muted: #765f57;
-        --line: rgba(118, 95, 87, 0.18);
-        --white: #fffdfb;
+        --paper: #fff8ed;
+        --paper-deep: #f0dfbd;
+        --paper-pink: #f4d9e0;
+        --terracotta: #e36e58;
+        --terracotta-dark: #8d3e58;
+        --rose: #e8a08b;
+        --ink: #2c2030;
+        --muted: #6d5767;
+        --line: rgba(65, 44, 58, 0.18);
+        --white: #fffdf7;
         --whatsapp: #25d366;
-        --shadow: 0 24px 60px rgba(77, 49, 42, 0.12);
+        --shadow: 0 24px 60px rgba(70, 39, 53, 0.14);
+        --mustard: #f3bf4f;
+        --teal: #34747a;
+        --blue: #547a98;
+        --sage: #a4b477;
+        --lilac: #dfcde6;
         --display: "Fraunces", Georgia, serif;
         --body: "Manrope", "Segoe UI", sans-serif;
         --radius-lg: 2rem;
         --radius-md: 1.25rem;
+        --cursor-crochet: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M5%205L25%2025'%20stroke='%23fff8ed'%20stroke-width='5'%20stroke-linecap='round'/%3E%3Cpath%20d='M5%205L25%2025'%20stroke='%232c2030'%20stroke-width='2.6'%20stroke-linecap='round'/%3E%3Cpath%20d='M5%205C1%201%200%205%202.3%207.5C4.1%209.5%206.2%208.5%207%206.6'%20fill='none'%20stroke='%23e36e58'%20stroke-width='2.8'%20stroke-linecap='round'%20stroke-linejoin='round'/%3E%3Ccircle%20cx='25'%20cy='25'%20r='2.2'%20fill='%23e36e58'%20stroke='%23fff8ed'%20stroke-width='1.2'/%3E%3C/svg%3E") 5 5, auto;
       }
 
       *,
@@ -1651,6 +1657,546 @@
         transform: none;
       }
 
+      /* Visual identity refresh */
+      body {
+        position: relative;
+        background-color: var(--paper);
+        background-image:
+          radial-gradient(circle at 7% 10%, rgba(243, 191, 79, 0.18), transparent 18rem),
+          radial-gradient(circle at 90% 28%, rgba(52, 116, 122, 0.12), transparent 24rem);
+      }
+
+      body::before {
+        position: fixed;
+        z-index: 150;
+        inset: 0;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20height='180'%20viewBox='0%200%20180%20180'%3E%3Cfilter%20id='grain'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='.75'%20numOctaves='3'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23grain)'%20opacity='.34'/%3E%3C/svg%3E");
+        background-size: 180px 180px;
+        content: "";
+        mix-blend-mode: multiply;
+        opacity: 0.055;
+      }
+
+      .eyebrow,
+      .section-label {
+        padding: 0.38rem 0.75rem 0.38rem 0.45rem;
+        border: 1px solid rgba(52, 116, 122, 0.2);
+        border-radius: 0.7rem 1.15rem 0.65rem 1rem;
+        background: rgba(52, 116, 122, 0.08);
+        color: var(--teal);
+      }
+
+      h2 em,
+      h1 em {
+        color: var(--terracotta-dark);
+        background: linear-gradient(transparent 58%, rgba(243, 191, 79, 0.58) 58% 88%, transparent 88%);
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+      }
+
+      .button {
+        border-radius: 0.75rem 1.2rem 0.6rem 1.25rem;
+      }
+
+      .button-secondary {
+        border-color: rgba(44, 32, 48, 0.24);
+        background: rgba(255, 253, 247, 0.54);
+      }
+
+      .button-link {
+        color: var(--teal);
+      }
+
+      .site-header {
+        background: rgba(255, 248, 237, 0.82);
+      }
+
+      .brand-mark {
+        border-radius: 48% 52% 58% 42% / 43% 47% 53% 57%;
+        background: linear-gradient(140deg, var(--terracotta) 0 52%, var(--mustard) 52% 100%);
+        box-shadow: 0.3rem 0.3rem 0 rgba(52, 116, 122, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+        transform: rotate(-6deg);
+      }
+
+      .brand-copy span {
+        color: var(--terracotta-dark);
+      }
+
+      .hero {
+        background:
+          radial-gradient(circle at 7% 14%, rgba(243, 191, 79, 0.3), transparent 15rem),
+          radial-gradient(circle at 82% 4%, rgba(223, 205, 230, 0.62), transparent 18rem),
+          linear-gradient(135deg, var(--paper) 0%, #fff0d5 50%, #f9e2e1 100%);
+      }
+
+      .hero::before {
+        position: absolute;
+        top: 2rem;
+        left: -7rem;
+        width: 24rem;
+        height: 24rem;
+        border: 2px dashed rgba(52, 116, 122, 0.26);
+        border-radius: 42% 58% 63% 37% / 42% 38% 62% 58%;
+        box-shadow: 0 0 0 1.6rem rgba(52, 116, 122, 0.07), 0 0 0 3.2rem rgba(52, 116, 122, 0.035);
+        content: "";
+        transform: rotate(21deg);
+      }
+
+      .hero::after {
+        right: -5rem;
+        bottom: -12rem;
+        width: 24rem;
+        height: 24rem;
+        border: 2px dashed rgba(141, 62, 88, 0.28);
+        box-shadow: 0 0 0 1.8rem rgba(141, 62, 88, 0.07), 0 0 0 3.6rem rgba(141, 62, 88, 0.035);
+        transform: rotate(-12deg);
+      }
+
+      .hero-image-wrap::before {
+        top: 1.05rem;
+        background: linear-gradient(145deg, var(--mustard), var(--teal));
+        opacity: 0.96;
+        transform: rotate(2deg);
+      }
+
+      .hero-image {
+        border: 0.45rem solid var(--white);
+        box-shadow: 0 28px 55px rgba(44, 32, 48, 0.18), 0.75rem 0.75rem 0 rgba(141, 62, 88, 0.17);
+      }
+
+      .hero-badge {
+        border-color: var(--ink);
+        background: var(--mustard);
+        box-shadow: 0.25rem 0.3rem 0 rgba(44, 32, 48, 0.16);
+        transform: rotate(3deg);
+      }
+
+      .badge-dot {
+        background: var(--teal);
+        box-shadow: 0 0 0 4px rgba(52, 116, 122, 0.18);
+      }
+
+      .hero-card {
+        border: 0;
+        color: var(--paper);
+        background: var(--teal);
+        box-shadow: 0.45rem 0.55rem 0 rgba(243, 191, 79, 0.7);
+        transform: rotate(-3deg);
+      }
+
+      .hero-card-kicker {
+        color: var(--mustard);
+      }
+
+      .hero-caption {
+        color: var(--teal);
+      }
+
+      .caption-line {
+        background: var(--mustard);
+      }
+
+      .caption-number {
+        color: var(--terracotta-dark);
+      }
+
+      .trust-band {
+        border-block-color: rgba(44, 32, 48, 0.14);
+        background: var(--mustard);
+      }
+
+      .trust-item {
+        border-right-color: rgba(44, 32, 48, 0.16);
+      }
+
+      .trust-item:nth-child(1) {
+        background: rgba(255, 253, 247, 0.16);
+      }
+
+      .trust-item:nth-child(2) {
+        background: rgba(52, 116, 122, 0.12);
+      }
+
+      .trust-item:nth-child(3) {
+        background: rgba(141, 62, 88, 0.08);
+      }
+
+      .trust-item:nth-child(4) {
+        background: rgba(255, 253, 247, 0.22);
+      }
+
+      .trust-icon {
+        border-color: currentColor;
+        background: rgba(255, 253, 247, 0.22);
+      }
+
+      .trust-item:nth-child(1) .trust-icon {
+        color: var(--terracotta-dark);
+      }
+
+      .trust-item:nth-child(2) .trust-icon {
+        color: var(--teal);
+      }
+
+      .trust-item:nth-child(3) .trust-icon {
+        color: var(--terracotta-dark);
+      }
+
+      .trust-item:nth-child(4) .trust-icon {
+        color: var(--blue);
+      }
+
+      .about-visual::before {
+        position: absolute;
+        top: -1.8rem;
+        right: 8%;
+        z-index: 1;
+        color: var(--mustard);
+        content: "✿";
+        font-family: var(--display);
+        font-size: 3.8rem;
+        line-height: 1;
+        transform: rotate(12deg);
+      }
+
+      .about-visual::after {
+        border-style: dashed;
+        border-color: rgba(52, 116, 122, 0.36);
+        box-shadow: 0 0 0 1.3rem rgba(52, 116, 122, 0.08), 0 0 0 2.6rem rgba(52, 116, 122, 0.04);
+      }
+
+      .about-image-main {
+        border: 0.45rem solid var(--paper);
+        transform: rotate(-2deg);
+      }
+
+      .about-image-detail {
+        transform: rotate(4deg);
+      }
+
+      .about-tag {
+        border-radius: 0.55rem 1.1rem 0.55rem 1rem;
+        background: var(--teal);
+        box-shadow: 0.3rem 0.3rem 0 rgba(243, 191, 79, 0.7);
+        transform: rotate(-2deg);
+      }
+
+      .about-signature {
+        margin-block: 2rem;
+        padding: 1.1rem 1.25rem;
+        border: 0;
+        border-left: 3px solid var(--mustard);
+        border-radius: 0.45rem 1rem 0.45rem 1rem;
+        background: rgba(243, 191, 79, 0.16);
+      }
+
+      .creations-section {
+        overflow: hidden;
+        background-color: var(--lilac);
+        background-image:
+          repeating-linear-gradient(-12deg, rgba(52, 116, 122, 0.045) 0 1px, transparent 1px 13px),
+          linear-gradient(135deg, rgba(255, 253, 247, 0.18), transparent 52%);
+      }
+
+      .creations-section::before,
+      .care-section::before {
+        position: absolute;
+        top: 2.5rem;
+        right: 6%;
+        width: 6rem;
+        height: 4rem;
+        background: radial-gradient(circle, var(--terracotta) 1.5px, transparent 2.5px) 0 0 / 13px 13px;
+        content: "";
+        opacity: 0.34;
+        transform: rotate(-9deg);
+      }
+
+      .creation-card {
+        --card-accent: var(--teal);
+        border: 0;
+        border-top: 0.35rem solid var(--card-accent);
+        border-radius: 1.1rem 1.7rem 0.8rem 1.6rem;
+        box-shadow: 0 14px 0 rgba(44, 32, 48, 0.08), 0 22px 36px rgba(70, 39, 53, 0.1);
+      }
+
+      .creation-card:nth-child(2) {
+        --card-accent: var(--terracotta);
+      }
+
+      .creation-card:nth-child(3) {
+        --card-accent: var(--blue);
+      }
+
+      .creation-card:nth-child(4) {
+        --card-accent: var(--sage);
+      }
+
+      .creation-card:hover {
+        box-shadow: 0 18px 0 rgba(44, 32, 48, 0.08), 0 26px 42px rgba(70, 39, 53, 0.16);
+      }
+
+      .creation-image-wrap {
+        background: var(--card-accent);
+      }
+
+      .status {
+        color: var(--white);
+        background: var(--card-accent);
+        box-shadow: 0.2rem 0.25rem 0 rgba(44, 32, 48, 0.16);
+        transform: rotate(-3deg);
+      }
+
+      .status::before {
+        background: var(--mustard);
+      }
+
+      .creation-index {
+        color: var(--card-accent);
+      }
+
+      .order-section {
+        background:
+          radial-gradient(circle at 90% 0%, rgba(243, 191, 79, 0.32), transparent 18rem),
+          radial-gradient(circle at 0 100%, rgba(52, 116, 122, 0.34), transparent 21rem),
+          linear-gradient(135deg, var(--terracotta-dark), #b64e55 50%, var(--teal) 140%);
+      }
+
+      .order-section::before {
+        border-style: dashed;
+        border-color: rgba(243, 191, 79, 0.48);
+        box-shadow: 0 0 0 1.5rem rgba(243, 191, 79, 0.09), 0 0 0 3rem rgba(243, 191, 79, 0.045);
+        transform: rotate(9deg);
+      }
+
+      .order-section::after {
+        position: absolute;
+        left: -5rem;
+        bottom: -7rem;
+        width: 27rem;
+        height: 14rem;
+        border: 2px solid rgba(243, 191, 79, 0.22);
+        border-radius: 50%;
+        box-shadow: 0 0 0 1.2rem rgba(243, 191, 79, 0.06), 0 0 0 2.4rem rgba(243, 191, 79, 0.035);
+        content: "";
+        transform: rotate(-18deg);
+      }
+
+      .order-section .section-label {
+        color: var(--mustard);
+        opacity: 1;
+      }
+
+      .order-section h2 em,
+      .availability h2 em,
+      .final-cta h2 em {
+        color: var(--mustard);
+        background: none;
+      }
+
+      .order-section .button-primary {
+        color: var(--ink);
+        background: var(--mustard);
+        box-shadow: 0 12px 24px rgba(44, 32, 48, 0.2);
+      }
+
+      .step-item {
+        border-bottom-color: rgba(255, 248, 237, 0.3);
+      }
+
+      .step-number {
+        border-color: var(--mustard);
+        color: var(--mustard);
+        background: rgba(243, 191, 79, 0.08);
+      }
+
+      .availability {
+        background-color: var(--ink);
+        background-image:
+          radial-gradient(circle at 10% 20%, rgba(84, 122, 152, 0.2), transparent 18rem),
+          radial-gradient(circle at 90% 80%, rgba(243, 191, 79, 0.13), transparent 20rem),
+          repeating-linear-gradient(135deg, rgba(255, 248, 237, 0.025) 0 1px, transparent 1px 15px);
+      }
+
+      .availability .section-label {
+        color: var(--mustard);
+        opacity: 1;
+      }
+
+      .availability-aside img {
+        border-color: rgba(243, 191, 79, 0.5);
+      }
+
+      .availability-aside small {
+        color: var(--mustard);
+      }
+
+      .availability .button-whatsapp {
+        color: var(--ink);
+        background: var(--mustard);
+        box-shadow: 0 12px 24px rgba(243, 191, 79, 0.2);
+      }
+
+      .differentials-section {
+        background-color: var(--paper-deep);
+        background-image: radial-gradient(circle at 85% 12%, rgba(223, 205, 230, 0.72), transparent 18rem);
+      }
+
+      .differential-card {
+        --card-accent: var(--teal);
+        border: 0;
+        border-radius: 1.2rem 0.7rem 1.4rem 0.8rem;
+        background: rgba(255, 253, 247, 0.68);
+        box-shadow: 0 10px 0 rgba(44, 32, 48, 0.07);
+      }
+
+      .differential-card:nth-child(1) {
+        --card-accent: var(--teal);
+        background: #d6e7e0;
+      }
+
+      .differential-card:nth-child(2) {
+        --card-accent: var(--terracotta-dark);
+        background: #f3c8c1;
+      }
+
+      .differential-card:nth-child(3) {
+        --card-accent: var(--blue);
+        background: #cbdce6;
+      }
+
+      .differential-card:nth-child(4) {
+        --card-accent: var(--terracotta-dark);
+        background: #e2d1e8;
+      }
+
+      .differential-card:nth-child(5) {
+        --card-accent: #657a47;
+        background: #dfe7bd;
+      }
+
+      .differential-symbol {
+        border-color: var(--card-accent);
+        color: var(--card-accent);
+        background: rgba(255, 253, 247, 0.28);
+      }
+
+      .gallery-section {
+        background-color: var(--paper);
+        background-image: radial-gradient(circle, rgba(141, 62, 88, 0.08) 1px, transparent 1.5px);
+        background-size: 15px 15px;
+      }
+
+      .gallery-item {
+        --gallery-accent: var(--teal);
+        border-radius: 1.2rem 0.65rem 1.5rem 0.8rem;
+        box-shadow: 0 0.45rem 0 var(--gallery-accent);
+      }
+
+      .gallery-item:nth-child(2) {
+        --gallery-accent: var(--mustard);
+      }
+
+      .gallery-item:nth-child(3) {
+        --gallery-accent: var(--terracotta);
+      }
+
+      .gallery-item:nth-child(4) {
+        --gallery-accent: var(--lilac);
+      }
+
+      .gallery-item:nth-child(5) {
+        --gallery-accent: var(--sage);
+      }
+
+      .care-section {
+        background-color: var(--paper-pink);
+        background-image: repeating-linear-gradient(135deg, rgba(141, 62, 88, 0.045) 0 1px, transparent 1px 13px);
+      }
+
+      .care-card {
+        --card-accent: var(--teal);
+        border: 0;
+        border-radius: 0.7rem 1.4rem 0.8rem 1.2rem;
+        background: #dce9df;
+        box-shadow: 0 10px 0 rgba(44, 32, 48, 0.07);
+      }
+
+      .care-card:nth-child(2) {
+        --card-accent: var(--terracotta-dark);
+        background: #f5d3c7;
+      }
+
+      .care-card:nth-child(3) {
+        --card-accent: var(--blue);
+        background: #d9d4e8;
+      }
+
+      .care-card span {
+        color: var(--card-accent);
+      }
+
+      .faq-list {
+        padding: 0 1rem;
+        border: 1px solid rgba(52, 116, 122, 0.18);
+        border-radius: 1.1rem 1.6rem 0.8rem 1.4rem;
+        background: rgba(255, 253, 247, 0.5);
+      }
+
+      .faq-item {
+        border-bottom-color: rgba(52, 116, 122, 0.18);
+      }
+
+      .faq-item summary::after {
+        border: 0;
+        color: var(--ink);
+        background: var(--mustard);
+      }
+
+      .final-cta {
+        background:
+          radial-gradient(circle at 90% 0%, rgba(243, 191, 79, 0.3), transparent 18rem),
+          linear-gradient(135deg, var(--terracotta-dark), var(--terracotta) 52%, var(--teal) 140%);
+      }
+
+      .final-cta::before,
+      .final-cta::after {
+        border-style: dashed;
+        border-color: rgba(243, 191, 79, 0.42);
+      }
+
+      .final-cta::before {
+        box-shadow: 0 0 0 1.6rem rgba(243, 191, 79, 0.08), 0 0 0 3.2rem rgba(243, 191, 79, 0.04);
+      }
+
+      .final-cta .section-label {
+        color: var(--mustard);
+        opacity: 1;
+      }
+
+      .final-cta .button-primary {
+        color: var(--ink);
+        background: var(--mustard);
+      }
+
+      .site-footer {
+        background-color: #241928;
+        background-image: repeating-linear-gradient(135deg, rgba(255, 248, 237, 0.025) 0 1px, transparent 1px 15px);
+      }
+
+      .footer-brand .brand-mark {
+        color: var(--paper);
+        background: var(--teal);
+      }
+
+      .footer-heading {
+        color: var(--mustard);
+      }
+
+      .whatsapp-float {
+        border-color: var(--mustard);
+      }
+
       @media (max-width: 1080px) {
         .desktop-nav {
           gap: 1rem;
@@ -2052,6 +2598,13 @@
         }
       }
 
+      @media (pointer: fine) {
+        body,
+        body * {
+          cursor: var(--cursor-crochet) !important;
+        }
+      }
+
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -2113,11 +2666,11 @@
       <section class="hero" id="inicio">
         <div class="container hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">Feito com carinho por Eliana</p>
-            <h1>Crochê artesanal para deixar seus momentos <em>mais especiais.</em></h1>
+            <p class="eyebrow">Fios, cores e histórias da Eliana</p>
+            <h1>Fios que viram presença, cor e <em>memória.</em></h1>
             <p>
-              Peças feitas à mão, com cuidado em cada ponto, para presentear, decorar ou acompanhar o seu estilo.
-              Encontre uma criação pronta ou conte o que você imagina.
+              O crochê da Eliana nasce devagar, com escolha de cor, textura e um cuidado que dá para sentir.
+              Escolha uma peça pronta ou traga uma ideia ainda meio solta.
             </p>
             <div class="hero-actions">
               <a class="button button-primary" data-whatsapp="base" href="#whatsapp">
@@ -2129,7 +2682,7 @@
             </div>
             <div class="hero-note">
               <span class="note-mark" aria-hidden="true">•</span>
-              <span>Tire suas dúvidas e peça uma orientação sem compromisso.</span>
+              <span>Pode chegar com uma ideia — até as que ainda estão meio soltas.</span>
             </div>
             <div class="hero-meta" aria-label="Características da Crochê Arte">
               <div><strong>100%</strong><span>feito à mão</span></div>
@@ -2165,10 +2718,10 @@
 
       <section class="trust-band" aria-label="Por que escolher a Crochê Arte">
         <div class="container trust-grid">
-          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Feito à mão</strong><span>Atenção em cada ponto.</span></div></div>
-          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Peças com identidade</strong><span>Criações cheias de personalidade.</span></div></div>
-          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Sob encomenda</strong><span>Detalhes conversados com você.</span></div></div>
-          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Atendimento próximo</strong><span>Converse diretamente com Eliana.</span></div></div>
+          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Feito no tempo da mão</strong><span>Ponto por ponto, sem pressa.</span></div></div>
+          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Cor com personalidade</strong><span>Combinações fora do óbvio.</span></div></div>
+          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Encomenda conversada</strong><span>A ideia começa com você.</span></div></div>
+          <div class="trust-item reveal"><span class="trust-icon" aria-hidden="true"></span><div><strong>Fala direto com Eliana</strong><span>Sem atendimento genérico.</span></div></div>
         </div>
       </section>
 
