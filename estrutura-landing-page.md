@@ -56,9 +56,9 @@ Opções feitas à mão para aniversários, nascimentos, chá de bebê, casament
 
 Detalhes para deixar a casa mais acolhedora e com a sua personalidade, como sousplats, almofadas, cestos, trilhos e itens decorativos.
 
-### Bolsas e acessórios
+### Capas e utilidades
 
-Peças artesanais para complementar a rotina com textura, cor e um toque autoral.
+Peças funcionais para levar cor, textura e cuidado aos detalhes da casa.
 
 **Chamada de apoio**  
 Não encontrou exatamente o que procura? Conte sua ideia pelo WhatsApp e vamos avaliar juntas as possibilidades.
